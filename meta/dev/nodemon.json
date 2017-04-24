@@ -1,0 +1,9 @@
+{
+	"restartable": "rs",
+	"verbose": true,
+	"watch": [
+		"src",
+		"test"
+	],
+	"ext": "ts"
+}

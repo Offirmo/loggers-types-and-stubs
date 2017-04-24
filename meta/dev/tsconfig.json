@@ -1,0 +1,18 @@
+{
+	"extends": "../tsconfig.base.json",
+	"compilerOptions": {
+		"noUnusedLocals": false,
+		"noUnusedParameters": false,
+		"importHelpers": false,
+
+		"noEmit": false,
+		"module": "CommonJS",
+		"target": "ES2017",
+		"outDir": "../../test/unit/src"
+	},
+	"include": [
+		"../../typings-custom/**/*.ts",
+		"../../src/**/*.ts",
+		"../../test/website1.ts"
+	]
+}

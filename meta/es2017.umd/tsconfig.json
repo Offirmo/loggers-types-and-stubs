@@ -1,0 +1,9 @@
+{
+	"extends": "../tsconfig.base.json",
+	"compilerOptions": {
+		"noEmit": false,
+		"module": "UMD",
+		"target": "ES2017",
+		"outDir": "../../dist/es2017.umd"
+	}
+}
