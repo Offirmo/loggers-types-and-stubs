@@ -1,6 +1,6 @@
 {
   "name": "loggers-types-and-stubs",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Typescript interfaces of common loggers + a \"do nothing\" implementation for each of them",
   "main": "dist/es2017.umd/index.js",
   "repository": "git@offirmo.github.com:Offirmo/loggers-types-and-stubs.git",
