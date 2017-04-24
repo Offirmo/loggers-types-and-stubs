@@ -4,6 +4,7 @@ export {
 	JSConsoleLogger,
 	SyslogLogger,
 	Log4jLogger,
+	ServerLogger,
 	NpmLogger,
 	AngularJSLogger,
 } from './types'
@@ -29,4 +30,3 @@ export {
 	npmLoggerToVoid,
 	angularJSLoggerToVoid,
 } from './to-void'
-
