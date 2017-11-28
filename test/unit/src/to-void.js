@@ -1,3 +1,5 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const stub = () => { };
 const alert = stub;
 const crit = stub;
@@ -19,6 +21,7 @@ const simpleLoggerToVoid = {
     warn,
     error,
 };
+exports.simpleLoggerToVoid = simpleLoggerToVoid;
 const consoleLoggerToVoid = Object.assign({}, console, {
     debug,
     log,
@@ -27,6 +30,7 @@ const consoleLoggerToVoid = Object.assign({}, console, {
     error,
     trace,
 });
+exports.consoleLoggerToVoid = consoleLoggerToVoid;
 const syslogLoggerToVoid = {
     emerg,
     alert,
@@ -37,6 +41,7 @@ const syslogLoggerToVoid = {
     info,
     debug,
 };
+exports.syslogLoggerToVoid = syslogLoggerToVoid;
 const log4jLoggerToVoid = {
     fatal,
     error,
@@ -45,7 +50,9 @@ const log4jLoggerToVoid = {
     debug,
     trace,
 };
+exports.log4jLoggerToVoid = log4jLoggerToVoid;
 const serverLoggerToVoid = log4jLoggerToVoid;
+exports.serverLoggerToVoid = serverLoggerToVoid;
 const npmLoggerToVoid = {
     error,
     warn,
@@ -54,12 +61,14 @@ const npmLoggerToVoid = {
     verbose,
     silly,
 };
+exports.npmLoggerToVoid = npmLoggerToVoid;
 const angularJSLoggerToVoid = {
     error,
     warn,
     info,
     debug,
 };
+exports.angularJSLoggerToVoid = angularJSLoggerToVoid;
 const bunyanLoggerToVoid = {
     fatal,
     error,
@@ -68,6 +77,7 @@ const bunyanLoggerToVoid = {
     debug,
     trace,
 };
+exports.bunyanLoggerToVoid = bunyanLoggerToVoid;
 const compatibleLoggerToVoid = {
     alert,
     crit,
@@ -84,5 +94,5 @@ const compatibleLoggerToVoid = {
     warn,
     warning,
 };
-export { simpleLoggerToVoid, consoleLoggerToVoid, syslogLoggerToVoid, log4jLoggerToVoid, serverLoggerToVoid, npmLoggerToVoid, angularJSLoggerToVoid, bunyanLoggerToVoid, compatibleLoggerToVoid, };
+exports.compatibleLoggerToVoid = compatibleLoggerToVoid;
 //# sourceMappingURL=to-void.js.map

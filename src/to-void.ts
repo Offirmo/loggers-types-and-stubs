@@ -6,6 +6,8 @@ import {
 	Log4jLogger,
 	NpmLogger,
 	AngularJSLogger,
+	BunyanLogger,
+	CompatibleLogger,
 } from './types'
 
 
@@ -80,6 +82,31 @@ const angularJSLoggerToVoid: AngularJSLogger = {
 	debug,
 }
 
+const bunyanLoggerToVoid: BunyanLogger = {
+	fatal,
+	error,
+	warn,
+	info,
+	debug,
+	trace,
+}
+
+const compatibleLoggerToVoid: CompatibleLogger = {
+	alert,
+	crit,
+	debug,
+	emerg,
+	error,
+	fatal,
+	info,
+	log,
+	notice,
+	silly,
+	trace,
+	verbose,
+	warn,
+	warning,
+}
 
 export {
 	simpleLoggerToVoid,
@@ -89,4 +116,6 @@ export {
 	serverLoggerToVoid,
 	npmLoggerToVoid,
 	angularJSLoggerToVoid,
+	bunyanLoggerToVoid,
+	compatibleLoggerToVoid,
 }

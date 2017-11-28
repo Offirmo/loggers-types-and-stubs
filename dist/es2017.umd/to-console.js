@@ -52,7 +52,7 @@
         trace,
     };
     exports.log4jLoggerToConsole = log4jLoggerToConsole;
-    const serverLoggerToConsole = log4jLoggerToConsole;
+    const serverLoggerToConsole = log4jLoggerToConsole; // alias
     exports.serverLoggerToConsole = serverLoggerToConsole;
     const npmLoggerToConsole = {
         error,
@@ -70,5 +70,43 @@
         debug,
     };
     exports.angularJSLoggerToConsole = angularJSLoggerToConsole;
+    const bunyanLoggerToConsole = {
+        fatal: (x, ...args) => fatal(...bunyan_args_harmonizer(x, ...args)),
+        error: (x, ...args) => error(...bunyan_args_harmonizer(x, ...args)),
+        warn: (x, ...args) => warn(...bunyan_args_harmonizer(x, ...args)),
+        info: (x, ...args) => info(...bunyan_args_harmonizer(x, ...args)),
+        debug: (x, ...args) => debug(...bunyan_args_harmonizer(x, ...args)),
+        trace: (x, ...args) => trace(...bunyan_args_harmonizer(x, ...args)),
+    };
+    exports.bunyanLoggerToConsole = bunyanLoggerToConsole;
+    function bunyan_args_harmonizer(arg1, ...other_args) {
+        if (arg1 instanceof Error) {
+            const err = arg1;
+            return other_args.concat({ err });
+        }
+        if (typeof arg1 !== 'string') {
+            const details = arg1;
+            return other_args.concat(details);
+        }
+        // no change
+        return [arg1].concat(...other_args);
+    }
+    const compatibleToConsole = {
+        alert,
+        crit,
+        debug,
+        emerg,
+        error,
+        fatal,
+        info,
+        log,
+        notice,
+        silly,
+        trace,
+        verbose,
+        warn,
+        warning,
+    };
+    exports.compatibleToConsole = compatibleToConsole;
 });
 //# sourceMappingURL=to-console.js.map

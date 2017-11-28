@@ -53,6 +53,52 @@ interface AngularJSLogger {
 	debug(message?: any, ...optionalParams: any[]): void
 }
 
+// see https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/bunyan/index.d.ts
+interface BunyanLogger {
+	fatal(error: Error, ...params: any[]): void
+	fatal(obj: Object, ...params: any[]): void
+	fatal(format: any, ...params: any[]): void
+
+	error(error: Error, ...params: any[]): void
+	error(obj: Object, ...params: any[]): void
+	error(format: any, ...params: any[]): void
+
+	warn(error: Error, ...params: any[]): void
+	warn(obj: Object, ...params: any[]): void
+	warn(format: any, ...params: any[]): void
+
+	info(error: Error, ...params: any[]): void
+	info(obj: Object, ...params: any[]): void
+	info(format: any, ...params: any[]): void
+
+	debug(error: Error, ...params: any[]): void
+	debug(obj: Object, ...params: any[]): void
+	debug(format: any, ...params: any[]): void
+
+	trace(error: Error, ...params: any[]): void
+	trace(obj: Object, ...params: any[]): void
+	trace(format: any, ...params: any[]): void
+}
+
+// happily accepts any of the above
+interface CompatibleLogger {
+	alert(...params: any[]): void
+	crit(...params: any[]): void
+	debug(...params: any[]): void
+	emerg(...params: any[]): void
+	error(...params: any[]): void
+	fatal(...params: any[]): void
+	info(...params: any[]): void
+	log(...params: any[]): void
+	notice(...params: any[]): void
+	silly(...params: any[]): void
+	trace(...params: any[]): void
+	verbose(...params: any[]): void
+	warn(...params: any[]): void
+	warning(...params: any[]): void
+}
+
+
 export {
 	SimpleLogger,
 	JSConsoleLogger,
@@ -61,4 +107,6 @@ export {
 	ServerLogger,
 	NpmLogger,
 	AngularJSLogger,
+	BunyanLogger,
+	CompatibleLogger,
 }

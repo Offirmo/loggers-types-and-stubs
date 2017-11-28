@@ -78,5 +78,31 @@
         debug,
     };
     exports.angularJSLoggerToVoid = angularJSLoggerToVoid;
+    const bunyanLoggerToVoid = {
+        fatal,
+        error,
+        warn,
+        info,
+        debug,
+        trace,
+    };
+    exports.bunyanLoggerToVoid = bunyanLoggerToVoid;
+    const compatibleLoggerToVoid = {
+        alert,
+        crit,
+        debug,
+        emerg,
+        error,
+        fatal,
+        info,
+        log,
+        notice,
+        silly,
+        trace,
+        verbose,
+        warn,
+        warning,
+    };
+    exports.compatibleLoggerToVoid = compatibleLoggerToVoid;
 });
 //# sourceMappingURL=to-void.js.map

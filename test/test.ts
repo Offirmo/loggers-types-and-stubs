@@ -9,6 +9,8 @@ import {
 	Log4jLogger,
 	NpmLogger,
 	AngularJSLogger,
+	BunyanLogger,
+	CompatibleLogger,
 } from '..'
 
 
@@ -20,6 +22,8 @@ import {
 	serverLoggerToConsole,
 	npmLoggerToConsole,
 	angularJSLoggerToConsole,
+	bunyanLoggerToConsole,
+	compatibleToConsole,
 } from '..'
 
 
@@ -31,6 +35,8 @@ import {
 	serverLoggerToVoid,
 	npmLoggerToVoid,
 	angularJSLoggerToVoid,
+	bunyanLoggerToVoid,
+	compatibleLoggerToVoid,
 } from '..'
 
 
@@ -61,12 +67,19 @@ console.log('--- should display:');
 	serverLoggerToConsole,
 	npmLoggerToConsole,
 	angularJSLoggerToConsole,
+	bunyanLoggerToConsole,
+	compatibleToConsole,
+	bunyanLoggerToVoid,
+	compatibleLoggerToVoid,
 ].forEach((logger: any) => {
+	console.log('-')
+
 	Object.keys(logger).forEach(key => {
 		if (!logger.hasOwnProperty(key)) return
 		if (!interesting.includes(key)) return
 
-		logger[key](`"${key}"`)
+		console.log(`- "${key}":`)
+		logger[key](`Logging "${key}" to console`)
 	})
 })
 
@@ -81,6 +94,8 @@ console.log('--- should NOT display:');
 	npmLoggerToVoid,
 	angularJSLoggerToVoid,
 ].forEach((logger: any) => {
+	console.log('-')
+
 	Object.keys(logger).forEach(key => {
 		if (!logger.hasOwnProperty(key)) return
 		if (!interesting.includes(key)) return

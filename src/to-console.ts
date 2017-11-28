@@ -6,6 +6,8 @@ import {
 	Log4jLogger,
 	NpmLogger,
 	AngularJSLogger,
+	BunyanLogger,
+	CompatibleLogger,
 } from './types'
 
 
@@ -54,7 +56,7 @@ const log4jLoggerToConsole: Log4jLogger = {
 	debug,
 	trace,
 }
-const serverLoggerToConsole = log4jLoggerToConsole
+const serverLoggerToConsole = log4jLoggerToConsole // alias
 
 const npmLoggerToConsole: NpmLogger = {
 	error,
@@ -73,6 +75,47 @@ const angularJSLoggerToConsole: AngularJSLogger = {
 }
 
 
+const bunyanLoggerToConsole: BunyanLogger = {
+	fatal: (x: any, ...args: any[]) => fatal(...bunyan_args_harmonizer(x, ...args)),
+	error: (x: any, ...args: any[]) => error(...bunyan_args_harmonizer(x, ...args)),
+	warn: (x: any, ...args: any[]) => warn(...bunyan_args_harmonizer(x, ...args)),
+	info: (x: any, ...args: any[]) => info(...bunyan_args_harmonizer(x, ...args)),
+	debug: (x: any, ...args: any[]) => debug(...bunyan_args_harmonizer(x, ...args)),
+	trace: (x: any, ...args: any[]) => trace(...bunyan_args_harmonizer(x, ...args)),
+}
+
+function bunyan_args_harmonizer(arg1: any, ...other_args: any[]): any[] {
+	if (arg1 instanceof Error) {
+		const err = arg1
+		return other_args.concat({err})
+	}
+
+	if (typeof arg1 !== 'string') {
+		const details = arg1
+		return other_args.concat(details)
+	}
+
+	// no change
+	return [arg1].concat(...other_args)
+}
+
+const compatibleToConsole: CompatibleLogger = {
+	alert,
+	crit,
+	debug,
+	emerg,
+	error,
+	fatal,
+	info,
+	log,
+	notice,
+	silly,
+	trace,
+	verbose,
+	warn,
+	warning,
+}
+
 export {
 	simpleLoggerToConsole,
 	consoleLoggerToConsole,
@@ -81,4 +124,6 @@ export {
 	serverLoggerToConsole,
 	npmLoggerToConsole,
 	angularJSLoggerToConsole,
+	bunyanLoggerToConsole,
+	compatibleToConsole,
 }

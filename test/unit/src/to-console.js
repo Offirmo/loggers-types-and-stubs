@@ -1,3 +1,5 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const log = console.log.bind(console);
 const info = console.info.bind(console);
 const warn = console.warn.bind(console);
@@ -18,7 +20,9 @@ const simpleLoggerToConsole = {
     warn,
     error,
 };
+exports.simpleLoggerToConsole = simpleLoggerToConsole;
 const consoleLoggerToConsole = console;
+exports.consoleLoggerToConsole = consoleLoggerToConsole;
 const syslogLoggerToConsole = {
     emerg,
     alert,
@@ -29,6 +33,7 @@ const syslogLoggerToConsole = {
     info,
     debug,
 };
+exports.syslogLoggerToConsole = syslogLoggerToConsole;
 const log4jLoggerToConsole = {
     fatal,
     error,
@@ -37,7 +42,9 @@ const log4jLoggerToConsole = {
     debug,
     trace,
 };
+exports.log4jLoggerToConsole = log4jLoggerToConsole;
 const serverLoggerToConsole = log4jLoggerToConsole; // alias
+exports.serverLoggerToConsole = serverLoggerToConsole;
 const npmLoggerToConsole = {
     error,
     warn,
@@ -46,12 +53,14 @@ const npmLoggerToConsole = {
     verbose,
     silly,
 };
+exports.npmLoggerToConsole = npmLoggerToConsole;
 const angularJSLoggerToConsole = {
     error,
     warn,
     info,
     debug,
 };
+exports.angularJSLoggerToConsole = angularJSLoggerToConsole;
 const bunyanLoggerToConsole = {
     fatal: (x, ...args) => fatal(...bunyan_args_harmonizer(x, ...args)),
     error: (x, ...args) => error(...bunyan_args_harmonizer(x, ...args)),
@@ -60,6 +69,7 @@ const bunyanLoggerToConsole = {
     debug: (x, ...args) => debug(...bunyan_args_harmonizer(x, ...args)),
     trace: (x, ...args) => trace(...bunyan_args_harmonizer(x, ...args)),
 };
+exports.bunyanLoggerToConsole = bunyanLoggerToConsole;
 function bunyan_args_harmonizer(arg1, ...other_args) {
     if (arg1 instanceof Error) {
         const err = arg1;
@@ -88,5 +98,5 @@ const compatibleToConsole = {
     warn,
     warning,
 };
-export { simpleLoggerToConsole, consoleLoggerToConsole, syslogLoggerToConsole, log4jLoggerToConsole, serverLoggerToConsole, npmLoggerToConsole, angularJSLoggerToConsole, bunyanLoggerToConsole, compatibleToConsole, };
+exports.compatibleToConsole = compatibleToConsole;
 //# sourceMappingURL=to-console.js.map
