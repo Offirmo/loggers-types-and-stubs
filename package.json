@@ -1,6 +1,6 @@
 {
 	"name": "@offirmo/loggers-types-and-stubs",
-	"version": "0.1.0",
+	"version": "0.2.0",
 	"description": "Typescript interfaces of common loggers + a \"do nothing\" implementation for each of them",
 	"repository": "git@offirmo.github.com:Offirmo/loggers-types-and-stubs.git",
 	"author": "Offirmo <offirmo.net@gmail.com>",
