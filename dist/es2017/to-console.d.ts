@@ -7,5 +7,5 @@ declare const serverLoggerToConsole: Log4jLogger;
 declare const npmLoggerToConsole: NpmLogger;
 declare const angularJSLoggerToConsole: AngularJSLogger;
 declare const bunyanLoggerToConsole: BunyanLogger;
-declare const compatibleToConsole: CompatibleLogger;
-export { simpleLoggerToConsole, consoleLoggerToConsole, syslogLoggerToConsole, log4jLoggerToConsole, serverLoggerToConsole, npmLoggerToConsole, angularJSLoggerToConsole, bunyanLoggerToConsole, compatibleToConsole };
+declare const compatibleLoggerToConsole: CompatibleLogger;
+export { simpleLoggerToConsole, consoleLoggerToConsole, syslogLoggerToConsole, log4jLoggerToConsole, serverLoggerToConsole, npmLoggerToConsole, angularJSLoggerToConsole, bunyanLoggerToConsole, compatibleLoggerToConsole };

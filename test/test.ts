@@ -14,32 +14,6 @@ import {
 } from '..'
 
 
-import {
-	simpleLoggerToConsole,
-	consoleLoggerToConsole,
-	syslogLoggerToConsole,
-	log4jLoggerToConsole,
-	serverLoggerToConsole,
-	npmLoggerToConsole,
-	angularJSLoggerToConsole,
-	bunyanLoggerToConsole,
-	compatibleToConsole,
-} from '..'
-
-
-import {
-	simpleLoggerToVoid,
-	consoleLoggerToVoid,
-	syslogLoggerToVoid,
-	log4jLoggerToVoid,
-	serverLoggerToVoid,
-	npmLoggerToVoid,
-	angularJSLoggerToVoid,
-	bunyanLoggerToVoid,
-	compatibleLoggerToVoid,
-} from '..'
-
-
 const interesting = [
 	'alert',
 	'crit',
@@ -57,7 +31,20 @@ const interesting = [
 	'warning',
 ]
 
+
 console.log('--- should display:');
+
+import {
+	simpleLoggerToConsole,
+	consoleLoggerToConsole,
+	syslogLoggerToConsole,
+	log4jLoggerToConsole,
+	serverLoggerToConsole,
+	npmLoggerToConsole,
+	angularJSLoggerToConsole,
+	bunyanLoggerToConsole,
+	compatibleLoggerToConsole,
+} from '..'
 
 [
 	simpleLoggerToConsole,
@@ -68,9 +55,7 @@ console.log('--- should display:');
 	npmLoggerToConsole,
 	angularJSLoggerToConsole,
 	bunyanLoggerToConsole,
-	compatibleToConsole,
-	bunyanLoggerToVoid,
-	compatibleLoggerToVoid,
+	compatibleLoggerToConsole,
 ].forEach((logger: any) => {
 	console.log('-')
 
@@ -83,7 +68,20 @@ console.log('--- should display:');
 	})
 })
 
+
 console.log('--- should NOT display:');
+
+import {
+	simpleLoggerToVoid,
+	consoleLoggerToVoid,
+	syslogLoggerToVoid,
+	log4jLoggerToVoid,
+	serverLoggerToVoid,
+	npmLoggerToVoid,
+	angularJSLoggerToVoid,
+	bunyanLoggerToVoid,
+	compatibleLoggerToVoid,
+} from '..'
 
 [
 	simpleLoggerToVoid,
@@ -93,6 +91,8 @@ console.log('--- should NOT display:');
 	serverLoggerToVoid,
 	npmLoggerToVoid,
 	angularJSLoggerToVoid,
+	bunyanLoggerToVoid,
+	compatibleLoggerToVoid,
 ].forEach((logger: any) => {
 	console.log('-')
 

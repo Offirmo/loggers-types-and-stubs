@@ -91,7 +91,7 @@
         // no change
         return [arg1].concat(...other_args);
     }
-    const compatibleToConsole = {
+    const compatibleLoggerToConsole = {
         alert,
         crit,
         debug,
@@ -107,6 +107,6 @@
         warn,
         warning,
     };
-    exports.compatibleToConsole = compatibleToConsole;
+    exports.compatibleLoggerToConsole = compatibleLoggerToConsole;
 });
 //# sourceMappingURL=to-console.js.map

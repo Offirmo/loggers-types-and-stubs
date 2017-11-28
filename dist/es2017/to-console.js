@@ -72,7 +72,7 @@ function bunyan_args_harmonizer(arg1, ...other_args) {
     // no change
     return [arg1].concat(...other_args);
 }
-const compatibleToConsole = {
+const compatibleLoggerToConsole = {
     alert,
     crit,
     debug,
@@ -88,5 +88,5 @@ const compatibleToConsole = {
     warn,
     warning,
 };
-export { simpleLoggerToConsole, consoleLoggerToConsole, syslogLoggerToConsole, log4jLoggerToConsole, serverLoggerToConsole, npmLoggerToConsole, angularJSLoggerToConsole, bunyanLoggerToConsole, compatibleToConsole, };
+export { simpleLoggerToConsole, consoleLoggerToConsole, syslogLoggerToConsole, log4jLoggerToConsole, serverLoggerToConsole, npmLoggerToConsole, angularJSLoggerToConsole, bunyanLoggerToConsole, compatibleLoggerToConsole, };
 //# sourceMappingURL=to-console.js.map

@@ -99,7 +99,7 @@ function bunyan_args_harmonizer(arg1: any, ...other_args: any[]): any[] {
 	return [arg1].concat(...other_args)
 }
 
-const compatibleToConsole: CompatibleLogger = {
+const compatibleLoggerToConsole: CompatibleLogger = {
 	alert,
 	crit,
 	debug,
@@ -125,5 +125,5 @@ export {
 	npmLoggerToConsole,
 	angularJSLoggerToConsole,
 	bunyanLoggerToConsole,
-	compatibleToConsole,
+	compatibleLoggerToConsole,
 }
